@@ -53,11 +53,15 @@ switch (operatorVariable) {
     case "/":
         result = aVariable / bVariable;
         break;
-    case "**" || "^":
+    case "**":
+        result = aVariable ** bVariable;
+        break;
+    case "^":
         result = aVariable ** bVariable;
         break;
     case "%":
         result = aVariable % bVariable;
+        break;
     
 }
 
