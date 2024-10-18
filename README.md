@@ -1,4 +1,6 @@
 # BR-vecka-42
 Vi planerade hur vi skulle göra uppgiften och när vi skulle börja. Vi kom fram  till att vi gör grunden av uppgiften samma dag (torsdag). Vi skapade additions-funktionen och sen kopierade vi den för att skapa funktionerna för dem andra operatörerna. Vi hade problem med att förstå och använda && + || för operator funktionen så att den gav felmeddelande när det var ett annat tecken än dem tillgänliga operatorerna. Vi kämpade med det men löste det till slut. Vi behövde lägga till paranteser för varje kriterie. Vi behövde använda && eftersom vi använde !== istället för ==. 
 
-18/10: Medans alla kom till boiler room lade vi till så att det inte var möjligt att dela med 0 och lade till ett felmeddelande för det. Planerade hur vi jobbar framåt. Man får välja om man vill lägga till funktioner på miniräknaren eller jobba med veckans uppgifter. Check in 11.15.
+18/10: Medans alla kom till boiler room lade vi till så att det inte var möjligt att dela med 0 och lade till ett felmeddelande för det. Planerade hur vi jobbar framåt. Man får välja om man vill lägga till funktioner på miniräknaren eller jobba med veckans uppgifter. Check up 11.15.
+
+Check up2: Vi kollade på förändringarna som alla gjort individuellt. Rebecca skapade script.js för att använda sig av funktioner så att det blir bättre practice. Thomas jobbade på html så att den blev kopplad till js och kunde skriva ut resultaten. Abdikadir och Gustav lade till varsin operator. Vi felsökte lite under mötet och tog bort lite onödig kod. Vi avslutade med att förbereda presentationen. 
