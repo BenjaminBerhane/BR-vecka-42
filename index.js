@@ -53,15 +53,12 @@ else if (operatorVariable == "%") {
     alert(`svar: ${result}`);
     console.log(`${aVariable} ${operatorVariable} ${bVariable} = ${result}`);
 }
+// behövs if här?
 else if (operatorVariable == "**"){
         result = aVariable ** bVariable;
         alert(`svar: ${result}`);
         console.log(`${aVariable} ${operatorVariable} ${bVariable} = ${result}`);
         }
-else {
-    alert("Error, not correct input");
-    console.log("Error, not correct input");
-}
 
 // lagt in så det kommer ut i html
 inputDisplay.innerHTML = aVariable + operatorVariable + bVariable;
