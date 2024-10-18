@@ -1,5 +1,4 @@
 // Number input function
-//let promptText = "Enter a number";
 
 function getNumberInput(promptText) {
     let userInput = prompt(promptText).replace(",", ".");
@@ -54,6 +53,12 @@ switch (operatorVariable) {
     case "/":
         result = aVariable / bVariable;
         break;
+    case "**" || "^":
+        result = aVariable ** bVariable;
+        break;
+    case "%":
+        result = aVariable % bVariable;
+    
 }
 
 // Display result
