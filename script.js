@@ -14,7 +14,7 @@ function getNumberInput(promptText) {
 
 // Function to get a valid operator
 function getOperatorInput() {
-    const validOperators = ["+", "-", "*", "/"];
+    const validOperators = ["+", "-", "*", "/", "**", "^"];
     let operator = prompt("Enter operator");
     
     while (!validOperators.includes(operator)) {
@@ -53,11 +53,16 @@ switch (operatorVariable) {
     case "/":
         result = aVariable / bVariable;
         break;
-    case "**" || "^":
+    case "**":
+        result = aVariable ** bVariable;
+        break;
+    case "^":
         result = aVariable ** bVariable;
         break;
     case "%":
         result = aVariable % bVariable;
+        break;
+    
     
 }
 
