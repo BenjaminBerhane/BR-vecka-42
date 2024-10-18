@@ -10,10 +10,9 @@ while(isNaN(aVariable)){
 }
 
 // Operator selection
-userInput = prompt("Enter operator");
-console.log("User input for operator: ",userInput, typeof userInput);
-while((userInput !== "+") && (userInput !== "-") && (userInput !== "*") && (userInput !== "/")){
-    userInput = prompt("Wrong input! Enter operator");
+let operatorVariable = prompt("Enter operator");
+while((operatorVariable !== "+") && (operatorVariable !== "-") && (operatorVariable !== "*") && (operatorVariable !== "/") && (operatorVariable !== "%") && (operatorVariable !== "**")){
+    operatorVariable = prompt("Wrong input! Enter operator");
 }
 operatorVariable = userInput;
 
@@ -50,7 +49,27 @@ else if (operatorVariable == "/"){
     alert(`svar: ${result}`);
     console.log(`${aVariable} ${operatorVariable} ${bVariable} = ${result}`);
 }
+else if (operatorVariable == "/"){
+    result = aVariable / bVariable;
+    alert(`svar: ${result}`);
+    console.log(`${aVariable} ${operatorVariable} ${bVariable} = ${result}`);
+}
+else if (operatorVariable == "%") {
+    result = aVariable % bVariable;
+    alert(`svar: ${result}`);
+    console.log(`${aVariable} ${operatorVariable} ${bVariable} = ${result}`);
+}
+else if (operatorVariable == "**"){
+        result = aVariable ** bVariable;
+        alert(`svar: ${result}`);
+        console.log(`${aVariable} ${operatorVariable} ${bVariable} = ${result}`);
+        }
 else {
     alert("Error, not correct input");
     console.log("Error, not correct input");
 }
+
+// lagt in så det kommer ut i html
+inputDisplay.innerHTML = aVariable + operatorVariable + bVariable;
+
+resultDisplay.innerHTML = result;
