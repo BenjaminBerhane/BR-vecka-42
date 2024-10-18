@@ -15,6 +15,10 @@ while((operatorVariable !== "+") && (operatorVariable !== "-") && (operatorVaria
 let bVariable = parseFloat(prompt("Enter another number"));
 while(isNaN(bVariable)){
     bVariable = parseFloat(prompt("WRONG INPUT! Enter a number"));
+
+}
+while ((bVariable == 0) && (operatorVariable == "/")){
+    bVariable = parseFloat(prompt("Can`t divide by 0. Enter new number"))
 }
 
 let result;
