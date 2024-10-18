@@ -18,7 +18,7 @@ function getOperatorInput() {
     let operator = prompt("Enter operator");
     
     while (!validOperators.includes(operator)) {
-        operator = prompt("WRONG INPUT! Enter a valid operator (+, -, *, /):");
+        operator = prompt("WRONG INPUT! Enter a valid operator (+, -, *, /, **, ^):");
     }
     
     return operator;
