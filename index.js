@@ -1,28 +1,35 @@
 // First number input
-let aVariable = parseFloat(prompt("Enter a number").replace(",", "."));
+let userInput = prompt("Enter a number").replace(",", ".");
+let aVariable = parseFloat(userInput);
+console.log(userInput, typeof userInput);
+console.log(aVariable, typeof aVariable);
 
 while(isNaN(aVariable)){
-    aVariable = parseFloat(prompt("WRONG INPUT! Enter a number").replace(",", "."));
+    userInput = prompt("WRONG INPUT! Enter a number").replace(",", ".");
+    aVariable = parseFloat(userInput);
 }
 
 // Operator selection
-let operatorVariable = prompt("Enter operator");
-while((operatorVariable !== "+") && (operatorVariable !== "-") && (operatorVariable !== "*") && (operatorVariable !== "/")){
-    operatorVariable = prompt("Wrong input! Enter operator");
+userInput = prompt("Enter operator");
+console.log("User input for operator: ",userInput, typeof userInput);
+while((userInput !== "+") && (userInput !== "-") && (userInput !== "*") && (userInput !== "/")){
+    userInput = prompt("Wrong input! Enter operator");
 }
+operatorVariable = userInput;
 
 // Second number input
-let bVariable = parseFloat(prompt("Enter another number").replace(",", "."));
-while(isNaN(bVariable)){
-    bVariable = parseFloat(prompt("WRONG INPUT! Enter a number").replace(",", "."));
+userInput = parseFloat(prompt("Enter another number").replace(",", "."));
+while(isNaN(userInput)){
+    userInput = parseFloat(prompt("WRONG INPUT! Enter a number").replace(",", "."));
 
 }
-while ((bVariable == 0) && (operatorVariable == "/")){
-    bVariable = parseFloat(prompt("Can`t divide by 0. Enter new number"))
+while ((userInput == 0) && (operatorVariable == "/")){
+    userInput = parseFloat(prompt("Can`t divide by 0. Enter new number"));
 }
+let bVariable = userInput
 
-let result;
-
+// Result
+let result; //declares undefined result variable
 if (operatorVariable == "+"){
     result = aVariable + bVariable;
     alert(`svar: ${result}`);
