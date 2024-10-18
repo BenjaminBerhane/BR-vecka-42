@@ -1,0 +1,76 @@
+* {
+ box-sizing: border-box;
+}
+
+body {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ background-color: #333;
+ margin: 0;
+}
+
+.calculator {
+ width: 250px;
+ padding: 20px;
+ background-color: #2d2d2d;
+ border-radius: 10px;
+ box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+#display {
+ width: 100%;
+ height: 50px;
+ font-size: 24px;
+ text-align: right;
+ margin-bottom: 20px;
+ padding: 10px;
+ border: none;
+ border-radius: 5px;
+}
+
+.buttons {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 10px;
+}
+
+.button {
+ font-size: 20px;
+ padding: 15px;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ color: white;
+}
+
+.number {
+ background-color: #666;
+}
+
+.operator {
+ background-color: #f39c12;
+}
+
+.clear {
+ background-color: #e74c3c;
+}
+
+.plus {
+ grid-column: 4; /* Placerar + i den fjärde kolumnen */
+}
+
+.equals {
+ background-color: #2ecc71;
+ grid-column: 4; /* Placerar = i den fjärde kolumnen */
+ grid-row: span 2; /* Gör = två rader hög */
+}
+
+.zero {
+ grid-column: span 2; /* Gör 0 två kolumner bred */
+}
+
+.decimal {
+ background-color: #666;
+}
