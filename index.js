@@ -8,7 +8,6 @@ while(isNaN(aVariable)){
 // Operator selection
 let operatorVariable = prompt("Enter operator");
 while((operatorVariable !== "+") && (operatorVariable !== "-") && (operatorVariable !== "*") && (operatorVariable !== "/") && (operatorVariable !== "%") && (operatorVariable !== "**")){
-    {
     operatorVariable = prompt("Wrong input! Enter operator");
 }
 
