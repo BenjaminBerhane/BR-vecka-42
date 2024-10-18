@@ -7,7 +7,7 @@ while(isNaN(aVariable)){
 
 // Operator selection
 let operatorVariable = prompt("Enter operator");
-while((operatorVariable !== "+") && (operatorVariable !== "-") && (operatorVariable !== "*") && (operatorVariable !== "/")){
+while((operatorVariable !== "+") && (operatorVariable !== "-") && (operatorVariable !== "**") && (operatorVariable !== "*") && (operatorVariable !== "/")){
     operatorVariable = prompt("Wrong input! Enter operator");
 }
 
@@ -42,7 +42,12 @@ else if (operatorVariable == "/"){
     result = aVariable / bVariable;
     alert(`svar: ${result}`);
     console.log(`${aVariable} ${operatorVariable} ${bVariable} = ${result}`);
-}
+    }
+else if (operatorVariable == "**"){
+        result = aVariable ** bVariable;
+        alert(`svar: ${result}`);
+        console.log(`${aVariable} ${operatorVariable} ${bVariable} = ${result}`);
+        }
 else {
     alert("Error, not correct input");
     console.log("Error, not correct input");
