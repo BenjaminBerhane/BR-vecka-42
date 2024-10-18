@@ -2,7 +2,7 @@
 let aVariable = parseFloat(prompt("Enter a number").replace(",", "."));
 
 while(isNaN(aVariable)){
-    aVariable = parseFloat(prompt("WRONG INPUT! Enter a number"));
+    aVariable = parseFloat(prompt("WRONG INPUT! Enter a number").replace(",", "."));
 }
 
 // Operator selection
@@ -12,9 +12,9 @@ while((operatorVariable !== "+") && (operatorVariable !== "-") && (operatorVaria
 }
 
 // Second number input
-let bVariable = parseFloat(prompt("Enter another number"));
+let bVariable = parseFloat(prompt("Enter another number").replace(",", "."));
 while(isNaN(bVariable)){
-    bVariable = parseFloat(prompt("WRONG INPUT! Enter a number"));
+    bVariable = parseFloat(prompt("WRONG INPUT! Enter a number").replace(",", "."));
 
 }
 while ((bVariable == 0) && (operatorVariable == "/")){
