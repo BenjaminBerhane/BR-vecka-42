@@ -1,7 +1,7 @@
-// Number input function
 
+// Number input function
 function getNumberInput(promptText) {
-    let userInput = prompt(promptText).replace(",", ".");
+    let userInput = prompt(promptText).replace(",", ".").trim(); // .trim() to remove accidental whitespace
     let numberVariable = parseFloat(userInput);
     
     while (isNaN(numberVariable)) {
@@ -17,7 +17,7 @@ function getOperatorInput() {
     const validOperators = ["+", "-", "*", "/", "**", "^"];
     let operator = prompt("Enter operator");
     
-    while (!validOperators.includes(operator)) {
+    while (!validOperators.includes(operator)) { // runs if/while the input operator does not match validOperators 
         operator = prompt("WRONG INPUT! Enter a valid operator (+, -, *, /, **, ^):");
     }
     
@@ -69,7 +69,7 @@ switch (operatorVariable) {
 alert(`Result: ${result}`);
 console.log(`${aVariable} ${operatorVariable} ${bVariable} = ${result}`);
 
-// lagt in så det kommer ut i html
+// html output
 inputDisplay.innerHTML = aVariable + operatorVariable + bVariable;
 
 resultDisplay.innerHTML = result;
