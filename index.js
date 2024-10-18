@@ -64,6 +64,9 @@ else {
 }
 
 // lagt in så det kommer ut i html
-inputDisplay.innerHTML = aVariable + operatorVariable + bVariable;
+const inputDisplay = document.getElementById("inputDisplay");
+const resultDisplay = document.getElementById("resultDisplay");
+
+inputDisplay.innerHTML = `${aVariable} ${operatorVariable} ${bVariable}`;
 
 resultDisplay.innerHTML = result;
