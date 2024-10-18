@@ -47,3 +47,8 @@ else {
     alert("Error, not correct input");
     console.log("Error, not correct input");
 }
+
+// lagt in så det kommer ut i html
+inputDisplay.innerHTML = aVariable + operatorVariable + bVariable;
+
+resultDisplay.innerHTML = result;
