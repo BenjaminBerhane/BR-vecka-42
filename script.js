@@ -68,3 +68,8 @@ switch (operatorVariable) {
 // Display result
 alert(`Result: ${result}`);
 console.log(`${aVariable} ${operatorVariable} ${bVariable} = ${result}`);
+
+// lagt in så det kommer ut i html
+inputDisplay.innerHTML = aVariable + operatorVariable + bVariable;
+
+resultDisplay.innerHTML = result;
