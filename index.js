@@ -1,5 +1,5 @@
 // First number input
-let aVariable = parseFloat(prompt("Enter a number"));
+let aVariable = parseFloat(prompt("Enter a number").replace(",", "."));
 
 while(isNaN(aVariable)){
     aVariable = parseFloat(prompt("WRONG INPUT! Enter a number"));
