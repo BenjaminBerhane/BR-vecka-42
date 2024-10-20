@@ -41,7 +41,7 @@ function calculate(a, b, operator) {
         case "%":
             return a % b;
         default:
-            throw new Error("Invalid operator");
+            console.log("ERROR! Invalid operator" + operator);
     }
 }
 
