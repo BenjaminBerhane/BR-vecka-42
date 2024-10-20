@@ -54,8 +54,6 @@ switch (operatorVariable) {
         result = aVariable / bVariable;
         break;
     case "**":
-        result = aVariable ** bVariable;
-        break;
     case "^": //alternative way of requesting ** operator
         result = aVariable ** bVariable;
         break;
