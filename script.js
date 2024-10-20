@@ -54,7 +54,7 @@ const aVariable = getNumberInput("Enter a number");
 const operatorVariable = getOperatorInput();
 
 // Second number input
-let bVariable = getNumberInput("Enter another number");
+let bVariable = getNumberInput("Enter another number"); // _let_ because bVariable may be reassigned in case division by 0 is attempted
 
 // Handle division by zero
 while (operatorVariable === "/" && bVariable === 0) {
