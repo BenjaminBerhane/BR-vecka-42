@@ -70,6 +70,9 @@ alert(`Result: ${result}`);
 console.log(`${aVariable} ${operatorVariable} ${bVariable} = ${result}`);
 
 // html output
-inputDisplay.innerHTML = aVariable + operatorVariable + bVariable;
+const inputDisplay = document.getElementById("inputDisplay");
+const resultDisplay = document.getElementById("resultDisplay");
+
+inputDisplay.innerHTML = `${aVariable} ${operatorVariable} ${bVariable}`;
 
 resultDisplay.innerHTML = result;
