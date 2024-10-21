@@ -1,5 +1,5 @@
-
-// Number input function
+// FUNCTIONS
+// Number input 
 function getNumberInput(promptText) {
     let userInput = prompt(promptText).replace(",", ".").trim(); // .trim() to remove accidental whitespace
     let numberVariable = parseFloat(userInput);
@@ -12,7 +12,7 @@ function getNumberInput(promptText) {
     return numberVariable;
 }
 
-// Function to get a valid operator
+// Get a valid operator
 function getOperatorInput() {
     const validOperators = ["+", "-", "*", "/", "**", "^"];
     let operator = prompt("Enter operator");
@@ -24,6 +24,29 @@ function getOperatorInput() {
     return operator;
 }
 
+// Calculate function 
+function calculate(a, b, operator) {
+    switch (operator) {
+        case "+":
+            return a + b;
+        case "-":
+            return a - b;
+        case "*":
+            return a * b;
+        case "/":
+            return a / b;
+        case "**":
+        case "^": // group both cases together
+            return a ** b;
+        case "%":
+            return a % b;
+        default:
+            console.log("ERROR! Invalid operator" + operator);
+    }
+}
+
+//  START OF INTERACTION
+
 // First number input
 const aVariable = getNumberInput("Enter a number");
 
@@ -31,7 +54,7 @@ const aVariable = getNumberInput("Enter a number");
 const operatorVariable = getOperatorInput();
 
 // Second number input
-let bVariable = getNumberInput("Enter another number");
+let bVariable = getNumberInput("Enter another number"); // _let_ because bVariable may be reassigned in case division by 0 is attempted
 
 // Handle division by zero
 while (operatorVariable === "/" && bVariable === 0) {
@@ -39,31 +62,8 @@ while (operatorVariable === "/" && bVariable === 0) {
 }
 
 // Perform the calculation
-let result;
-switch (operatorVariable) {
-    case "+":
-        result = aVariable + bVariable;
-        break;
-    case "-":
-        result = aVariable - bVariable;
-        break;
-    case "*":
-        result = aVariable * bVariable;
-        break;
-    case "/":
-        result = aVariable / bVariable;
-        break;
-    case "**":
-        result = aVariable ** bVariable;
-        break;
-    case "^": //alternative way of requesting ** operator
-        result = aVariable ** bVariable;
-        break;
-    case "%":
-        result = aVariable % bVariable;
-        break;
-    
-}
+let result = calculate(aVariable, bVariable, operatorVariable);
+
 
 // Display result
 alert(`Result: ${result}`);
