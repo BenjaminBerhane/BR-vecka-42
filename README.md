@@ -4,3 +4,6 @@ Vi planerade hur vi skulle göra uppgiften och när vi skulle börja. Vi kom fra
 18/10: Medans alla kom till boiler room lade vi till så att det inte var möjligt att dela med 0 och lade till ett felmeddelande för det. Planerade hur vi jobbar framåt. Man får välja om man vill lägga till funktioner på miniräknaren eller jobba med veckans uppgifter. Check up 11.15.
 
 Check up2: Vi kollade på förändringarna som alla gjort individuellt. Rebecca skapade script.js för att använda sig av funktioner så att det blir bättre practice. Thomas jobbade på html så att den blev kopplad till js och kunde skriva ut resultaten. Abdikadir och Gustav lade till varsin operator. Vi felsökte lite under mötet och tog bort lite onödig kod. Vi avslutade med att förbereda presentationen. 
+
+check up3/retro: Vi gick igenom Trello:t och såg till så att alla tasks var klara. Vi gjorde retro:t och sammanfattade vad vi skulle jobba vidare på. Vi jämförde det också med förra veckans retro. Det vi gjorde bättre var att vi inte lade för mycket tid på uppgiften, vi kom igång med planeringen och arbetet tidigare, vi tog till saker vi pratade om i förra retro:t. Det vi kan fortsätta förbättra är komunikationen så vi vet att ingen hamnar efter, börja koda på nya sätt som t.ex. parcoding. 
+Vi avslutade med att förbereda inför presentationen. 
