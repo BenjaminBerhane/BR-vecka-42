@@ -14,11 +14,11 @@ function getNumberInput(promptText) {
 
 // Get a valid operator
 function getOperatorInput() {
-    const validOperators = ["+", "-", "*", "/", "**", "^"];
+    const validOperators = ["+", "-", "*", "/", "**", "^", "%"];
     let operator = prompt("Enter operator");
     
     while (!validOperators.includes(operator)) { // runs if/while the input operator does not match validOperators 
-        operator = prompt("WRONG INPUT! Enter a valid operator (+, -, *, /, **, ^):");
+        operator = prompt("WRONG INPUT! Enter a valid operator (+, -, *, /, **, ^, %):");
     }
     
     return operator;
@@ -39,7 +39,7 @@ function calculate(a, b, operator) {
         case "^": // group both cases together
             return a ** b;
         case "%":
-            return a % b;
+            return a % b; //modulus
         default:
             console.log("ERROR! Invalid operator" + operator);
     }
