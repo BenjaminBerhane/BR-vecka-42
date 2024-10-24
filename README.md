@@ -7,3 +7,7 @@ Check up2: Vi kollade på förändringarna som alla gjort individuellt. Rebecca 
 
 check up3/retro: Vi gick igenom Trello:t och såg till så att alla tasks var klara. Vi gjorde retro:t och sammanfattade vad vi skulle jobba vidare på. Vi jämförde det också med förra veckans retro. Det vi gjorde bättre var att vi inte lade för mycket tid på uppgiften, vi kom igång med planeringen och arbetet tidigare, vi tog till saker vi pratade om i förra retro:t. Det vi kan fortsätta förbättra är komunikationen så vi vet att ingen hamnar efter, börja koda på nya sätt som t.ex. parcoding. 
 Vi avslutade med att förbereda inför presentationen. 
+
+Boiler room v.43:
+Vi började med en ganska lång sprintplanering. Vi kollade tillbaks på förra retro:t för att ta hänsyn till förändringarna vi skulle göra. Vi skapade trello:t och bestämde vad som behöver göras. Vi delade upp arbetet. Det var oklart vad som menades med meny vilket så vi fastnade lite på det. Vi kom fram till att Rebecca har sitt egna arbetet eftersom att hon har jobb som hon måste anpassa sig till. Gustav/Thomas/Benjamin mob codar. 
+Vi bestämde tid för nästa stand up.
