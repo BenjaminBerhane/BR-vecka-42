@@ -1,7 +1,7 @@
 // First number input
 let aVariable = parseFloat(prompt("Enter a number").replace(",", "."));
 
-while(isNaN(aVariable)){
+while(isNaN(aVariable)){ 
     aVariable = parseFloat(prompt("WRONG INPUT! Enter a number").replace(",", "."));
 }
 
@@ -19,7 +19,7 @@ while(isNaN(bVariable)){
 }
 while ((bVariable == 0) && (operatorVariable == "/")){
     bVariable = parseFloat(prompt("Can`t divide by 0. Enter new number"))
-}
+} // Gustav förklarar
 
 let result;
 
