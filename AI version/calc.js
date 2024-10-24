@@ -15,9 +15,9 @@ buttons.forEach((button) => {
 
             // Vad den gör: Om knappen som klickades är "C" (Clear), rensas alla variabler och displayen på skärmen. Den här delen av koden återställer allt så att du kan börja om.
         if (value === "C") {
-            currentInput = "";
-            firstNumber = ""; // from null to "" for display /rebecca
-            operator = ""; // from null to "" for display /rebecca
+            currentInput = firstNumber = operator = ""; //more compact writing for clearing multiple variables  //rebecca
+            //firstNumber = ""; // from null to "" for display /rebecca
+            //operator = ""; // from null to "" for display /rebecca
             result = firstNumber; // changed from null to firstNumber /rebecca -- I think this makes it possible to continue calculations right away somehow, when I tried 0 it added a 0 to the calculation
             display.value = "";
 
@@ -25,14 +25,8 @@ buttons.forEach((button) => {
         } else if (value === "=") {
             if (operator && currentInput) {
                 result = calculate(firstNumber, parseFloat(currentInput), operator);
-                if(result == null){
-                    display.value = firstNumber;
-                    result = firstNumber; // assigns first number value to result, so that we can continue after failed division or % by 0 
-                    
-                } else {
-                    display.value = result;
-                    
-                }
+                result = result == null ? firstNumber : result;// assigns first number value to result, so that we can continue after failed division or % by 0 
+                display.value = result;
                 firstNumber = result;
                 currentInput = "";
                 console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
@@ -45,9 +39,11 @@ buttons.forEach((button) => {
             //och sparar operatorn som användaren valde. currentInput återställs för att användaren ska kunna skriva in det andra talet.
             // else if (value === "+" || value === "-" || value === "*" || value === "/")
         } else if (button.classList.contains("operator")) {
-            if (currentInput) {
+            if (currentInput) { ////////// ******* this does not have an else fallback*??? ***************//
                 result = calculate (parseFloat(firstNumber), parseFloat(currentInput), operator) // a calculation is made whenever a new operator is selected
+                result = result == null ? firstNumber : result;// assigns first number value to result, so that we can continue after failed division or % by 0 
                 firstNumber = result; // makes continuous calculations possible
+                display.value = result;
                 currentInput = "";
                 //console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
             }
