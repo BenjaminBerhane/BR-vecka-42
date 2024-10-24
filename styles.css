@@ -1,0 +1,79 @@
+/* General body styles */
+body {
+ background-color: #1a1a1a; /* Dark background */
+ color: #f07b3f; /* Glowing orange text */
+ font-family: 'Creepster', cursive; /* Optional spooky font, use Google Fonts if needed */
+ text-align: center;
+ margin: 0;
+ padding: 0;
+}
+
+/* Header styles */
+header {
+ background-color: #333;
+ padding: 20px;
+ border-bottom: 5px solid #f07b3f;
+}
+
+h1 {
+ color: #f07b3f; /* Glowing orange title */
+ text-shadow: 0 0 10px #f07b3f, 0 0 20px #ffab00, 0 0 30px #ff5e00;
+}
+
+/* Main section styling */
+main {
+ padding: 20px;
+ margin-top: 20px;
+}
+
+/* Paragraphs for input/result */
+p {
+ font-size: 18px;
+ margin: 10px 0;
+}
+
+/* Span elements (input/result display) */
+#inputDisplay, #resultDisplay {
+ font-weight: bold;
+ color: #ffcc00; /* Brighter yellow for contrast */
+ text-shadow: 0 0 8px #ffcc00;
+}
+
+/* Styling for spooky glow */
+body::before {
+ content: "";
+ position: absolute;
+ top: -50%;
+ left: -50%;
+ width: 200%;
+ height: 200%;
+ background: radial-gradient(circle at center, rgba(255,165,0,0.3), transparent 60%);
+ animation: pulse 6s infinite ease-in-out;
+ z-index: -1;
+}
+
+@keyframes pulse {
+ 0%, 100% {
+     transform: scale(1);
+ }
+ 50% {
+     transform: scale(1.05);
+ }
+}
+
+/* Optional button styles if needed */
+button {
+ background-color: #444;
+ color: #f07b3f;
+ border: 2px solid #f07b3f;
+ padding: 10px 20px;
+ font-size: 16px;
+ cursor: pointer;
+ text-shadow: 0 0 5px #f07b3f;
+}
+
+button:hover {
+ background-color: #f07b3f;
+ color: #444;
+ transition: 0.3s;
+}
