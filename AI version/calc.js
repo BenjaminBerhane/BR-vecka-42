@@ -18,7 +18,7 @@ buttons.forEach((button) => {
             currentInput = "";
             firstNumber = ""; // from null to "" for display /rebecca
             operator = ""; // from null to "" for display /rebecca
-            result = 0; // changed from null to 0 /rebecca
+            result = firstNumber; // changed from null to firstNumber /rebecca -- I think this makes it possible to continue calculations right away somehow, when I tried 0 it added a 0 to the calculation
             display.value = "";
 
             // Vad den gör: Om knappen som klickades är "=", betyder det att användaren vill se resultatet av sin uträkning. Här kontrollerar vi om det finns ett giltigt operator och ett aktuellt nummer. Om allt är korrekt, anropar vi calculate-funktionen med firstNumber, currentInput (det andra talet), och operatorn. Resultatet visas på skärmen, och firstNumber uppdateras till resultatet så att användaren kan fortsätta räkna vidare.
@@ -50,8 +50,13 @@ buttons.forEach((button) => {
             // else if (value === "+" || value === "-" || value === "*" || value === "/")
         } else if (button.classList.contains("operator")) {
             if (currentInput) {
-                firstNumber = parseFloat(currentInput);
+                result = calculate (parseFloat(firstNumber), parseFloat(currentInput), operator) // a calculation is made whenever a new operator is selected
+                //console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
+                firstNumber = result; // makes continuous calculations possible
                 currentInput = "";
+                display.value = result + " " + value; // value displays the pressed button text (aka the operator) /rebecca
+                //console.log("displays result when pressing any operator: ", result); //felsökning //rebecca
+                
             }
             operator = value;
 
