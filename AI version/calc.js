@@ -27,20 +27,16 @@ buttons.forEach((button) => {
                 result = calculate(firstNumber, parseFloat(currentInput), operator);
                 if(result == null){
                     display.value = firstNumber;
-                    console.log("firstNumber displayed");
-                    result = firstNumber; // assigns first number value to result, so that we can continue after failed division or % by 0
-                    console.log("result: ", result);
+                    result = firstNumber; // assigns first number value to result, so that we can continue after failed division or % by 0 
                     
-                    
-
                 } else {
                     display.value = result;
-                    console.log("result displayed");
                     
                 }
                 firstNumber = result;
                 currentInput = "";
-                operator = null;
+                console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
+                //operator = null; // maybe necessary but I removed it as an experiment  //rebecca
                 
             }
             
@@ -51,18 +47,17 @@ buttons.forEach((button) => {
         } else if (button.classList.contains("operator")) {
             if (currentInput) {
                 result = calculate (parseFloat(firstNumber), parseFloat(currentInput), operator) // a calculation is made whenever a new operator is selected
-                //console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
                 firstNumber = result; // makes continuous calculations possible
                 currentInput = "";
-                display.value = result + " " + value; // value displays the pressed button text (aka the operator) /rebecca
-                //console.log("displays result when pressing any operator: ", result); //felsökning //rebecca
-                
+                //console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
             }
             operator = value;
+            display.value = `${firstNumber} ${operator}`; // displays the operator  /rebecca// 
 
             // Vad den gör: Detta block körs om knappen inte är någon av specialknapparna (som "C", "=", eller en operator). Det betyder att det är en siffra, och vi lägger till den siffran till currentInput, och visar den på displayen.
         } else {
             currentInput += value;
+            console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
             display.value = firstNumber + " " + operator + " " + currentInput;
         }
     });
