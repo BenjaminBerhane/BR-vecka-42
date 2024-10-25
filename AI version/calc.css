@@ -45,6 +45,7 @@ body {
  border-radius: 10px; /* Rundare hörn på knapparna */
  cursor: pointer;
  color: white;
+ font-family: monospace;;
 }
 
 .button:hover {
