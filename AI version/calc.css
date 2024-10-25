@@ -55,6 +55,10 @@ body {
  background-color: #ff4500; /* Mörkare orange för operatorerna */
 }
 
+.variable {
+    background-color: #aa381c; /* brown-red for variables */
+}
+
 .clear {
  background-color: #8b0000; /* Mörkröd för clear-knappen */
 }
