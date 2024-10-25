@@ -52,7 +52,7 @@ buttons.forEach((button) => {
                     history.push(`${firstNumber} ${operator} ${currentInput} = ${result}`);
                 }
                 
-                display.value = result;
+                display.value = parseFloat(result).toFixed(2); // displays result;
                 firstNumber = result;
                 currentInput = "";
             }
@@ -66,13 +66,13 @@ buttons.forEach((button) => {
                 result = calculate (parseFloat(firstNumber), parseFloat(currentInput), operator) // a calculation is made whenever a new operator is selected
                 result = result == null ? firstNumber : result;// assigns first number value to result, so that we can continue after failed division or % by 0 
                 firstNumber = result; // makes continuous calculations possible
-                display.value = result;
+                display.value = parseFloat(result).toFixed(2); // displays result;
                 currentInput = "";
                 //console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
             }
             operator = value;
-            display.value = `${firstNumber} ${operator}`; // displays the operator  /rebecca// 
-
+            display.value = `${parseFloat(firstNumber).toFixed(2)} ${operator}`; // displays the operator  /rebecca// 
+            
             // Vad den gör: Detta block körs om knappen inte är någon av specialknapparna (som "C", "=", eller en operator). Det betyder att det är en siffra, och vi lägger till den siffran till currentInput, och visar den på displayen.
         } else if (button.classList.contains("history")) {
             showHistory(); // Funktion för att visa historik, alltså läser upp allt som finns inuti "history arrayen"
@@ -81,7 +81,7 @@ buttons.forEach((button) => {
         } else {
             currentInput += value;
             console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
-            display.value = `${firstNumber} ${operator} ${currentInput}`;
+            display.value = `${parseFloat(firstNumber).toFixed(2)} ${operator} ${currentInput}`;
         }
     });
 });
