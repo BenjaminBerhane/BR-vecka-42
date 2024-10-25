@@ -16,3 +16,5 @@ Vi bestämde tid för nästa stand up.
 Stand up 1: 
 Vi ändrade planen lite. Vi har lagt fler knappar i miniräknaren. Vi har sett till så att det går att fortsätta räkna ut tal efter varandra. Det går att fortsätta att räkna efter modolus/dividerat med noll. Vi fördelar arbetet och kör vidare.
 
+Stand up 2:
+Vi hade en check up i början. Vi kom fram till att vi behöver hjälpa varandra med kodningen. Vi satte dem nya målen som vi skulle jobba mot.
