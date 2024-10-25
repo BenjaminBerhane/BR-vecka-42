@@ -9,5 +9,10 @@ check up3/retro: Vi gick igenom Trello:t och såg till så att alla tasks var kl
 Vi avslutade med att förbereda inför presentationen. 
 
 Boiler room v.43:
+Sprint planering:
 Vi började med en ganska lång sprintplanering. Vi kollade tillbaks på förra retro:t för att ta hänsyn till förändringarna vi skulle göra. Vi skapade trello:t och bestämde vad som behöver göras. Vi delade upp arbetet. Det var oklart vad som menades med meny vilket så vi fastnade lite på det. Vi kom fram till att Rebecca har sitt egna arbetet eftersom att hon har jobb som hon måste anpassa sig till. Gustav/Thomas/Benjamin mob codar. 
 Vi bestämde tid för nästa stand up.
+
+Stand up 1: 
+Vi ändrade planen lite. Vi har lagt fler knappar i miniräknaren. Vi har sett till så att det går att fortsätta räkna ut tal efter varandra. Det går att fortsätta att räkna efter modolus/dividerat med noll. Vi fördelar arbetet och kör vidare.
+
