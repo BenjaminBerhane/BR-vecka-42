@@ -6,7 +6,7 @@ let currentInput = "";
 let firstNumber = "";
 /* let operator = null; */
 let operator = "";
-let savedVariables = {
+let savedVariables = { 
     X: null,
     Y: null,
     Z: null,
@@ -31,7 +31,7 @@ buttons.forEach((button) => {
         } else if (value === ".")  {
             if (currentInput === "") {
                 currentInput = "0.";
-                display.value = currentInput;}
+                display.value = `${firstNumber} ${operator} ${currentInput}`;}
                 else if (!currentInput.includes(".")) {
                     currentInput += ".";
                     display.value = currentInput; 
@@ -70,7 +70,7 @@ buttons.forEach((button) => {
         } else {
             currentInput += value;
             console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
-            display.value = firstNumber + " " + operator + " " + currentInput;
+            display.value = `${firstNumber} ${operator} ${currentInput}`;
         }
     });
 });
