@@ -6,6 +6,12 @@ let currentInput = "";
 let firstNumber = "";
 /* let operator = null; */
 let operator = "";
+let savedVariables = {
+    X: null,
+    Y: null,
+    Z: null,
+    a: null
+};
 let result = null;
 
     // Vad den gör: Detta är en loop som går igenom alla knappar (antagligen en samling av knappar från en miniräknare) och sätter en händelselyssnare på varje knapp. Varje gång en knapp klickas, körs koden som finns inuti funktionen.
@@ -88,3 +94,9 @@ function calculate(num1, num2, operator) {
     }
 }
 
+// Variable save function 
+function variableSave(selectedVariable, res) {
+    if (savedVariables.hasOwnProperty(selectedVariable)) {
+        savedVariables[selectedVariable] = res;
+    }
+}
