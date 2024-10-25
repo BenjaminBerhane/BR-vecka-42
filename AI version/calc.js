@@ -13,6 +13,7 @@ let savedVariables = {
     a: null
 };
 let result = null;
+let history = []; // Array för att lagra historiska uträkningar som en string
 
     // Vad den gör: Detta är en loop som går igenom alla knappar (antagligen en samling av knappar från en miniräknare) och sätter en händelselyssnare på varje knapp. Varje gång en knapp klickas, körs koden som finns inuti funktionen.
 buttons.forEach((button) => {
@@ -42,12 +43,18 @@ buttons.forEach((button) => {
             if (operator && currentInput) {
                 result = calculate(firstNumber, parseFloat(currentInput), operator);
                 result = result == null ? firstNumber : result;// assigns first number value to result, so that we can continue after failed division or % by 0 
-                display.value = result;
-                firstNumber = result;
-                currentInput = "";
+
                 console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
                 //operator = null; // maybe necessary but I removed it as an experiment  //rebecca
                 
+                 // Lägg till uträkningen i historik om den är giltig med !==null, med hjälp av hustory push alltså efter man klickat = läggs den till
+                 if (result !== null) {
+                    history.push(`${firstNumber} ${operator} ${currentInput} = ${result}`);
+                }
+                
+                display.value = result;
+                firstNumber = result;
+                currentInput = "";
             }
 
             // Vad den gör: Om knappen som klickades är en operator (som "+", "-", "*", "/"), lagrar vi det första talet i 
@@ -67,6 +74,8 @@ buttons.forEach((button) => {
             display.value = `${firstNumber} ${operator}`; // displays the operator  /rebecca// 
 
             // Vad den gör: Detta block körs om knappen inte är någon av specialknapparna (som "C", "=", eller en operator). Det betyder att det är en siffra, och vi lägger till den siffran till currentInput, och visar den på displayen.
+        } else if (button.classList.contains("history")) {
+            showHistory(); // Funktion för att visa historik, alltså läser upp allt som finns inuti "history arrayen"
         } else {
             currentInput += value;
             console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
@@ -91,6 +100,15 @@ function calculate(num1, num2, operator) {
             return num1 ** num2;
         default:
             return num2;
+    }
+}
+
+//funktion för att visa historiken, där alla sparade uträkningar visas med hjälp av "alert" 
+function showHistory() {
+    if (history.length === 0) {
+        alert("No history available.");
+    } else {
+        alert("Calculation History:\n" + history.join("\n"));
     }
 }
 
