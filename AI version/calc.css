@@ -45,7 +45,17 @@ body {
  border-radius: 10px; /* Rundare hörn på knapparna */
  cursor: pointer;
  color: white;
+ font-family: monospace;;
 }
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 3px 3px 5px #58391f;
+   }
+   .button:active {
+    transform: scale(0.95);
+    box-shadow: 3px 3px 5px #58391f;
+   }
 
 .number {
  background-color: #f79a5b; /* Orange för siffrorna */
@@ -55,9 +65,12 @@ body {
  background-color: #ff4500; /* Mörkare orange för operatorerna */
 }
 
-.variable {
-    background-color: #aa381c; /* brown-red for variables */
-}
+.history, .clearHistory {
+    background-color: #aa381c; /* Mörkare orange för operatorerna */
+    grid-column: span 2; 
+    font-size: 20px;
+   }
+
 
 .clear {
  background-color: #8b0000; /* Mörkröd för clear-knappen */
