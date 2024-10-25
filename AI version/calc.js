@@ -108,9 +108,9 @@ function calculate(num1, num2, operator) {
 //funktion för att visa historiken, där alla sparade uträkningar visas med hjälp av "alert" 
 function showHistory() {
     if (history.length === 0) {
-        alert("No history available.");
+        alert("Ingen historik tillgänglig.");
     } else {
-        alert("Calculation History:\n" + history.join("\n"));
+        alert("Kalkulations Historik:\n" + history.join("\n"));
     }
 }
 
