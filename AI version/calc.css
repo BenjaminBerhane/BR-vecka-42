@@ -65,9 +65,12 @@ body {
  background-color: #ff4500; /* Mörkare orange för operatorerna */
 }
 
-.variable {
-    background-color: #aa381c; /* brown-red for variables */
-}
+.history, .clearHistory {
+    background-color: #aa381c; /* Mörkare orange för operatorerna */
+    grid-column: span 2; 
+
+   }
+
 
 .clear {
  background-color: #8b0000; /* Mörkröd för clear-knappen */

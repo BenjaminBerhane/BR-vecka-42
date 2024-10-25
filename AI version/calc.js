@@ -76,6 +76,8 @@ buttons.forEach((button) => {
             // Vad den gör: Detta block körs om knappen inte är någon av specialknapparna (som "C", "=", eller en operator). Det betyder att det är en siffra, och vi lägger till den siffran till currentInput, och visar den på displayen.
         } else if (button.classList.contains("history")) {
             showHistory(); // Funktion för att visa historik, alltså läser upp allt som finns inuti "history arrayen"
+        } else if (button.classList.contains("clearHistory")) {
+            clearHistory(); // Funktion för att rensa historik, alltså läser upp allt som finns inuti "history arrayen"
         } else {
             currentInput += value;
             console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
@@ -111,6 +113,15 @@ function showHistory() {
         alert("Calculation History:\n" + history.join("\n"));
     }
 }
+
+// Funktion för att rensa historiken och logga varje borttagen uträkning
+function clearHistory() {
+    while (history.length > 0) {
+        console.log("Removed:", history.pop()); // Tar bort sista elementet och loggar det
+    }
+    alert("History cleared.");
+}
+
 
 // Variable save function 
 function variableSave(selectedVariable, res) {
