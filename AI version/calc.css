@@ -68,7 +68,7 @@ body {
 .history, .clearHistory {
     background-color: #aa381c; /* Mörkare orange för operatorerna */
     grid-column: span 2; 
-
+    font-size: 20px;
    }
 
 
