@@ -68,9 +68,6 @@ buttons.forEach((button) => {
             //!firstNumber 
             //och sparar operatorn som användaren valde. currentInput återställs för att användaren ska kunna skriva in det andra talet.
             // else if (value === "+" || value === "-" || value === "*" || value === "/")
-=======
-=======
->>>>>>> Stashed changes
             operator = null;
 
         // Saving the current result to a variable
@@ -83,10 +80,6 @@ buttons.forEach((button) => {
 
 
         // Operator buttons store the current input and operator
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
         } else if (button.classList.contains("operator")) {
             if (currentInput) { ////////// ******* this does not have an else fallback*??? ***************//
                 result = calculate (parseFloat(firstNumber), parseFloat(currentInput), operator) // a calculation is made whenever a new operator is selected
@@ -104,8 +97,6 @@ buttons.forEach((button) => {
         } else if (button.classList.contains("clearHistory")) {
             clearHistory(); // Funktion för att rensa historik, alltså läser upp allt som finns inuti "history arrayen"
         } else {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             currentInput += value;
             console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
             display.value = `${firstNumber} ${operator} ${currentInput}`;
