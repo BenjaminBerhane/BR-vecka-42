@@ -47,6 +47,15 @@ body {
  color: white;
 }
 
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 3px 3px 5px #58391f;
+   }
+   .button:active {
+    transform: scale(0.95);
+    box-shadow: 3px 3px 5px #58391f;
+   }
+
 .number {
  background-color: #f79a5b; /* Orange för siffrorna */
 }
