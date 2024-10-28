@@ -2,31 +2,19 @@ const display = document.getElementById("display");
 const buttons = document.querySelectorAll(".button");
 
 let currentInput = "";
-//let firstNumber = null;
 let firstNumber = "";
-/* let operator = null; */
 let operator = "";
-let savedVariables = { 
-    X: null,
-    Y: null,
-    Z: null,
-    a: null
-};
 let result = null;
 let history = []; // Array för att lagra historiska uträkningar som en string
 
-    // Vad den gör: Detta är en loop som går igenom alla knappar (antagligen en samling av knappar från en miniräknare) och sätter en händelselyssnare på varje knapp. Varje gång en knapp klickas, körs koden som finns inuti funktionen.
+    // Vad den gör: Detta är en loop (foreach) som går igenom alla knappar och sätter en händelselyssnare på varje knapp. Varje gång en knapp klickas, körs koden som finns inuti funktionen.
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
         const value = button.innerText; // Vad den gör: Denna rad hämtar texten som finns inuti knappen (t.ex. "C", "=", "1", "+", etc.) och lagrar den i variabeln value.
 
             // Vad den gör: Om knappen som klickades är "C" (Clear), rensas alla variabler och displayen på skärmen. Den här delen av koden återställer allt så att du kan börja om.
         if (value === "C") {
-            currentInput = firstNumber = operator = ""; //more compact writing for clearing multiple variables  //rebecca
-            //firstNumber = ""; // from null to "" for display /rebecca
-            //operator = ""; // from null to "" for display /rebecca
-            result = firstNumber; // changed from null to firstNumber /rebecca -- I think this makes it possible to continue calculations right away somehow, when I tried 0 it added a 0 to the calculation
-            display.value = "";
+            currentInput = firstNumber = operator = result = display.value = ""; //more compact writing for clearing multiple variables  
 
         // Den här koden ser till så "." omvandlas till "0." om man börjar med det. Annars kommer "." läggas till i inputen förutsatt att den inte redan har "."
         } else if (value === ".")  {
@@ -43,16 +31,13 @@ buttons.forEach((button) => {
             if (operator && currentInput) {
                 result = calculate(firstNumber, parseFloat(currentInput), operator);
                 result = result == null ? firstNumber : result;// assigns first number value to result, so that we can continue after failed division or % by 0 
-
-                console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
-                //operator = null; // maybe necessary but I removed it as an experiment  //rebecca
-                
-                 // Lägg till uträkningen i historik om den är giltig med !==null, med hjälp av hustory push alltså efter man klickat = läggs den till
+               
+                 // Lägg till uträkningen i historik om den är giltig med !==null, med hjälp av history push alltså efter man klickat = läggs den till
                  if (result !== null) {
                     history.push(`${firstNumber} ${operator} ${currentInput} = ${result}`);
                 }
                 
-                display.value = parseFloat(result.toFixed(2)); // displays result;
+                display.value = parseFloat(result.toFixed(2)); // displays result and rounds it to 2 decimal places
                 firstNumber = result;
                 currentInput = "";
             }
@@ -62,13 +47,13 @@ buttons.forEach((button) => {
             //och sparar operatorn som användaren valde. currentInput återställs för att användaren ska kunna skriva in det andra talet.
             // else if (value === "+" || value === "-" || value === "*" || value === "/")
         } else if (button.classList.contains("operator")) {
-            if (currentInput) { ////////// ******* this does not have an else fallback*??? ***************//
-                result = calculate (parseFloat(firstNumber), parseFloat(currentInput), operator) // a calculation is made whenever a new operator is selected
+            if (currentInput) { 
+                result = calculate (parseFloat(firstNumber), parseFloat(currentInput), operator); // a calculation is made whenever a new operator is selected
                 result = result == null ? firstNumber : result;// assigns first number value to result, so that we can continue after failed division or % by 0 
                 firstNumber = result; // makes continuous calculations possible
                 display.value = result; // displays result;
                 currentInput = "";
-                //console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
+               
             }
             operator = value;
             display.value = `${parseFloat(firstNumber.toFixed(2))} ${operator}`; // displays the operator  /rebecca// 
@@ -77,15 +62,15 @@ buttons.forEach((button) => {
         } else if (button.classList.contains("history")) {
             showHistory(); // Funktion för att visa historik, alltså läser upp allt som finns inuti "history arrayen"
         } else if (button.classList.contains("clearHistory")) {
-            clearHistory(); // Funktion för att rensa historik, alltså läser upp allt som finns inuti "history arrayen"
+            clearHistory(); // Funktion för att rensa historik, alltså radera allt som finns inuti "history arrayen"
         } else {
             currentInput += value;
-            console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
+            
             if (firstNumber === "") {
                 display.value = `${firstNumber} ${operator} ${currentInput}`
             }
             else {
-            display.value = `${parseFloat(firstNumber.toFixed(2))} ${operator} ${currentInput}`;
+            display.value = `${parseFloat(firstNumber.toFixed(2))} ${operator} ${currentInput}`; //se till så att decimalerna på firstNumber avrundas till två tal.
             }
         }
     });
@@ -115,22 +100,14 @@ function showHistory() {
     if (history.length === 0) {
         alert("Ingen historik tillgänglig.");
     } else {
-        alert("Kalkulations Historik:\n" + history.join("\n"));
+        alert("Kalkulations Historik:\n" + history.join("\n")); // lägger till alla uträkningar med \n (ny rad)
     }
 }
 
 // Funktion för att rensa historiken och logga varje borttagen uträkning
 function clearHistory() {
     while (history.length > 0) {
-        console.log("Removed:", history.pop()); // Tar bort sista elementet och loggar det
+         history.pop(); // Tar bort alla elementet och loggar det
     }
     alert("History cleared.");
-}
-
-
-// Variable save function 
-function variableSave(selectedVariable, res) {
-    if (savedVariables.hasOwnProperty(selectedVariable)) {
-        savedVariables[selectedVariable] = res;
-    }
 }
