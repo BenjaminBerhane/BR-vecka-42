@@ -52,7 +52,7 @@ buttons.forEach((button) => {
                     history.push(`${firstNumber} ${operator} ${currentInput} = ${result}`);
                 }
                 
-                display.value = result; // displays result;
+                display.value = parseFloat(result.toFixed(2)); // displays result;
                 firstNumber = result;
                 currentInput = "";
             }
@@ -71,7 +71,7 @@ buttons.forEach((button) => {
                 //console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
             }
             operator = value;
-            display.value = `${firstNumber} ${operator}`; // displays the operator  /rebecca// 
+            display.value = `${parseFloat(firstNumber.toFixed(2))} ${operator}`; // displays the operator  /rebecca// 
             
             // Vad den gör: Detta block körs om knappen inte är någon av specialknapparna (som "C", "=", eller en operator). Det betyder att det är en siffra, och vi lägger till den siffran till currentInput, och visar den på displayen.
         } else if (button.classList.contains("history")) {
@@ -81,7 +81,12 @@ buttons.forEach((button) => {
         } else {
             currentInput += value;
             console.log("calculate", "firstNumber: ",firstNumber, "currentInput: ", parseFloat(currentInput), "operator: ", operator); // felsökning //rebecca
-            display.value = `${firstNumber} ${operator} ${currentInput}`;
+            if (firstNumber === "") {
+                display.value = `${firstNumber} ${operator} ${currentInput}`
+            }
+            else {
+            display.value = `${parseFloat(firstNumber.toFixed(2))} ${operator} ${currentInput}`;
+            }
         }
     });
 });
