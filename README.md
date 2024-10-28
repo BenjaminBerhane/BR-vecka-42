@@ -22,4 +22,4 @@ Vi hade en check up i början. Vi kom fram till att vi behöver hjälpa varandra
 Stand up 3:
 Vi gjorde klart det sista med koden. Vi merge:ade branchen till main. Vi planerade måndagen så vi vet vad vi ska göra inför lektionen. 
 
-Retro/planering av presentation:
+Retro/planering av presentation: Vi hade retro och kom fram till att tidsplaneringen behöver bli bättre så vi inte jobbar över för mycket. Vi ska försöka bli klara med grunden först och sen år extra arbetet vara valfritt. Vi delade upp presentationen och gick igenom all kodning.
