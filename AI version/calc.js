@@ -107,7 +107,7 @@ function showHistory() {
 // Funktion för att rensa historiken och logga varje borttagen uträkning
 function clearHistory() {
     while (history.length > 0) {
-         history.pop(); // Tar bort alla elementet och loggar det
+         history.pop(); // Tar bort alla elementet i array:en
     }
     alert("History cleared.");
 }

@@ -21,3 +21,5 @@ Vi hade en check up i början. Vi kom fram till att vi behöver hjälpa varandra
 
 Stand up 3:
 Vi gjorde klart det sista med koden. Vi merge:ade branchen till main. Vi planerade måndagen så vi vet vad vi ska göra inför lektionen. 
+
+Retro/planering av presentation:
