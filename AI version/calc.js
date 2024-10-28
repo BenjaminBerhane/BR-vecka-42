@@ -23,7 +23,7 @@ buttons.forEach((button) => {
                 display.value = `${firstNumber} ${operator} ${currentInput}`;}
                 else if (!currentInput.includes(".")) {
                     currentInput += ".";
-                    display.value = currentInput; 
+                    display.value = `${firstNumber} ${operator} ${currentInput}`; 
                 }
 
         // Vad den gör: Om knappen som klickades är "=", betyder det att användaren vill se resultatet av sin uträkning. Här kontrollerar vi om det finns ett giltigt operator och ett aktuellt nummer. Om allt är korrekt, anropar vi calculate-funktionen med firstNumber, currentInput (det andra talet), och operatorn. Resultatet visas på skärmen, och firstNumber uppdateras till resultatet så att användaren kan fortsätta räkna vidare.
